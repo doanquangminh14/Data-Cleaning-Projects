@@ -1,0 +1,21 @@
+# Core Data Manipulation and Analysis
+pandas>=2.0.0
+numpy>=1.24.0
+openpyxl>=3.1.0
+
+# Machine Learning & Statistics
+scikit-learn>=1.3.0
+scipy>=1.11.0
+
+# Data Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Jupyter Environment
+jupyterlab>=4.0.0
+ipykernel>=6.25.0
+notebook>=7.0.0
+
+# Utility & Quality
+tabulate>=0.9.0
+pytest>=7.4.0
