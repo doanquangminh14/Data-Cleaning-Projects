@@ -60,8 +60,8 @@ def train_salary_model(
 
     print("\n================ Model Evaluation ================")
     print(f"Model Equation : Salary = {model.coef_[0]:.2f} * (YearsExperience) + {model.intercept_:.2f}")
-    print(f"Train R² Score : {r2_train:.4f}")
-    print(f"Test R² Score  : {r2_test:.4f}")
+    print(f"Train R2 Score : {r2_train:.4f}")
+    print(f"Test R2 Score  : {r2_test:.4f}")
     print(f"Test MAE       : ${mae_test:,.2f}")
     print(f"Test RMSE      : ${rmse_test:,.2f}")
     print("==================================================\n")

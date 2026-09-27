@@ -49,12 +49,14 @@ def clean_customer_call_list(
 
     # 4. Standardize Phone Numbers (digits only, formatted as XXX-XXX-XXXX)
     if "Phone_Number" in df.columns:
-        df["Phone_Number"] = df["Phone_Number"].astype(str)
-        df["Phone_Number"] = df["Phone_Number"].apply(lambda x: re.sub(r"[^0-9]", "", x))
-        
         def format_phone(p):
-            if len(p) == 10:
-                return f"{p[:3]}-{p[3:6]}-{p[6:]}"
+            if pd.isna(p):
+                return None
+            digits = re.sub(r"[^0-9]", "", str(p))
+            if len(digits) == 10:
+                return f"{digits[:3]}-{digits[3:6]}-{digits[6:]}"
+            elif len(digits) == 11 and digits.startswith("1"):
+                return f"{digits[1:4]}-{digits[4:7]}-{digits[7:]}"
             return None
         
         df["Phone_Number"] = df["Phone_Number"].apply(format_phone)
